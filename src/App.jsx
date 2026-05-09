@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useCounter from "./Components/UseCounter";
-
+import { UserContext } from "./Components/USerContext";
 import "./App.css";
 
 function App() {
@@ -11,6 +11,10 @@ function App() {
       <h1>Count: {count}</h1>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
+      <UserContext.Provider value={{ user: null }}>
+        {/* Your app content */}
+        <Child />
+      </UserContext.Provider>
     </>
   );
 }
